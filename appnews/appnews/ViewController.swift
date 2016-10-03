@@ -7,14 +7,34 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        Alamofire.request(.GET, "https://televisa.news/wp-json/wp/v2/breaking/").responseJSON{ (responseData) -> Void in
+            
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                
+                print(swiftyJsonVar)
+                
+                if let resData = swiftyJsonVar.arrayObject {
+                    
+                    print(resData)
 
+                }
+              
+            }
+        
+        }
+        
+    }
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
