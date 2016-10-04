@@ -13,7 +13,8 @@ import SwiftyJSON
 class FeedTableViewController: UITableViewController {
     
 //    var feedNews = [News]()
-    var feedNews:NSMutableArray = [];
+    var feedNews:NSMutableArray = []
+    var json : JSON = JSON.null
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,30 +26,15 @@ class FeedTableViewController: UITableViewController {
         Alamofire.request(.GET, "https://televisa.news/wp-json/wp/v2/breaking/").responseJSON{ (response) -> Void in
             
             if((response.result.value) != nil) {
-                
-                if let value = response.result.value as? NSMutableArray {
-                    // handle the results as JSON, without a bunch of nested if loops
-                    let todo = JSON(value)
-                    
-                    print(todo[0]["title"]["rendered"])
-                    
-                    if let title = todo[0]["title"]["rendered"].string {
-                        // to access a field:
-                        print("The title is: " + title)
-                    } else {
-                        print("error parsing")
-                    }
-                    
-                    for post in value {
-                        
-                        print(post)
-                        self.feedNews.addObject("Hola")
-                    }
-                    
-                    
-                    
-                    self.tableView.reloadData()
+            
+                guard let data = response.result.value else{
+                    print("Request failed with error")
+                    return
                 }
+                
+                self.json = JSON(data)
+                self.tableView.reloadData()
+            
             }
             
         }
@@ -76,8 +62,13 @@ class FeedTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-        return feedNews.count
+        switch self.json.type
+        {
+        case Type.Array:
+            return self.json.count
+        default:
+            return 1
+        }
     }
 
     
@@ -85,16 +76,80 @@ class FeedTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("NewsCell", forIndexPath: indexPath) as! FeedTableViewCell
 
         // Configure the cell...
-        let dict = feedNews[indexPath.row]
         
-        print(dict)
+        // Get row index
+        var row = indexPath.row
         
-//        cell.titleLabel?.text = dict["id"] as? String;
         
-        cell.titleLabel?.text = feedNews[indexPath.row] as? String
+        print(self.json[row]["title"]["rendered"])
         
+        //Make sure post title is a string
+        if let title = self.json[row]["title"]["rendered"].string{
+            print("Titulo: " + title)
+            
+            cell.titleLabel!.text = title
+        }else{
+            cell.titleLabel!.text = "Sin title"
+        }
+        
+        //Make sure post date is a string
+//        if let date = self.json[row]["date"].string{
+//            cell.postDate!.text = date
+//        }
+//        
+//        if let image = self.json[row]["featured_image"]["attachment_meta"]["sizes"]["medium"]["url"].string{
+//            
+//            if image != "null"{
+//                
+//                ImageLoader.sharedLoader.imageForUrl(image, completionHandler:{(image: UIImage?, url: String) in
+//                    cell.postImage.image = image!
+//                })
+//            }
+//        }
+       
         
         return cell
+    }
+    
+    func populateFields(cell: FeedTableViewCell, index: Int){
+        
+        print("populateFields")
+        
+        //Make sure post title is a string
+        guard let title = self.json[index]["title"]["rendered"].string else{
+            cell.titleLabel!.text = "Loading..."
+            return
+        }
+        
+        // An action must always proceed the guard conditional
+        cell.titleLabel!.text = title
+        
+        //Make sure post date is a string
+//        guard let date = self.json[index]["date"].string else{
+//            cell.postDate!.text = "--"
+//            return
+//        }
+//        
+//        cell.postDate!.text = date
+        
+        /*
+         * Set up Featured Image
+         * Using guard, there's no need for nested if statements
+         * to unwrap and check optionals
+         */
+        
+//        guard let image = self.json[index]["featured_image_thumbnail_url"].string where
+//            image != "null"
+//            else{
+//                
+//                print("Image didn't load")
+//                return
+//        }
+//        
+//        ImageLoader.sharedLoader.imageForUrl(image, completionHandler:{(image: UIImage?, url: String) in
+//            cell.postImage.image = image!
+//        })
+        
     }
     
 
@@ -133,14 +188,28 @@ class FeedTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        //Which view controller are we sending this to?
+        var postScene = segue.destinationViewController as! BreakingViewController;
+        
+        //pass the selected JSON to the "viewPost variable of the BreakingViewController Class
+        if let indexPath = self.tableView.indexPathForSelectedRow?.row{
+            
+            let selected = self.json[indexPath]
+            postScene.viewPost = selected
+            
+            
+        }
+        
+        
     }
-    */
+    
 
 }

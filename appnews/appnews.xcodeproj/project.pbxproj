@@ -19,6 +19,8 @@
 		EC6995DB1DA2A10500CEAE27 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6995DA1DA2A10500CEAE27 /* FeedTableViewCell.swift */; };
 		EC6995DD1DA2A4ED00CEAE27 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6995DC1DA2A4ED00CEAE27 /* FeedTableViewController.swift */; };
 		EC6995E01DA2A86B00CEAE27 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6995DF1DA2A86B00CEAE27 /* News.swift */; };
+		ECDC0F231DA3EF1200FFFC26 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC0F221DA3EF1200FFFC26 /* ImageLoader.swift */; };
+		ECDC0F261DA3F5BC00FFFC26 /* BreakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC0F251DA3F5BC00FFFC26 /* BreakingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		EC6995DA1DA2A10500CEAE27 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		EC6995DC1DA2A4ED00CEAE27 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		EC6995DF1DA2A86B00CEAE27 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		ECDC0F221DA3EF1200FFFC26 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		ECDC0F251DA3F5BC00FFFC26 /* BreakingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 		EC44BD0A1DA28B74006EA3A2 /* appnews */ = {
 			isa = PBXGroup;
 			children = (
+				ECDC0F241DA3F59800FFFC26 /* views */,
+				ECDC0F211DA3EEF300FFFC26 /* helpers */,
 				EC6995DE1DA2A7C600CEAE27 /* model */,
 				EC44BD0B1DA28B74006EA3A2 /* AppDelegate.swift */,
 				EC44BD0D1DA28B74006EA3A2 /* ViewController.swift */,
@@ -168,6 +174,22 @@
 				EC6995DF1DA2A86B00CEAE27 /* News.swift */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		ECDC0F211DA3EEF300FFFC26 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ECDC0F221DA3EF1200FFFC26 /* ImageLoader.swift */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		ECDC0F241DA3F59800FFFC26 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				ECDC0F251DA3F5BC00FFFC26 /* BreakingViewController.swift */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,7 +376,9 @@
 			files = (
 				EC44BD0E1DA28B74006EA3A2 /* ViewController.swift in Sources */,
 				EC6995DB1DA2A10500CEAE27 /* FeedTableViewCell.swift in Sources */,
+				ECDC0F231DA3EF1200FFFC26 /* ImageLoader.swift in Sources */,
 				EC44BD0C1DA28B74006EA3A2 /* AppDelegate.swift in Sources */,
+				ECDC0F261DA3F5BC00FFFC26 /* BreakingViewController.swift in Sources */,
 				EC6995E01DA2A86B00CEAE27 /* News.swift in Sources */,
 				EC6995DD1DA2A4ED00CEAE27 /* FeedTableViewController.swift in Sources */,
 			);
