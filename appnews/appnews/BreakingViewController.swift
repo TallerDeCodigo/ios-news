@@ -12,6 +12,9 @@ import SwiftyJSON
 class BreakingViewController: UIViewController {
     
     var viewPost : JSON = JSON.null
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class BreakingViewController: UIViewController {
         
         if let postTitle = self.viewPost["title"].string{
             print(postTitle)
+            titleLabel?.text = postTitle;
         }
     }
 
