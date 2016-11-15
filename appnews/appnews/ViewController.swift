@@ -9,6 +9,9 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
 
 class ViewController: UIViewController {
 
@@ -16,7 +19,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        Alamofire.request(.GET, "https://televisa.news/wp-json/wp/v2/breaking/").responseJSON{ (responseData) -> Void in
+        Alamofire.request("https://televisa.news/wp-json/news/v1/region/cdmx").responseJSON{ (responseData) -> Void in
             
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
@@ -38,6 +41,20 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func handleLogTokenTouch(_ sender: UIButton) {
+        // [START get_iid_token]
+        let token = FIRInstanceID.instanceID().token()
+        print("InstanceID token: \(token!)")
+        // [END get_iid_token]
+    }
+    
+    @IBAction func handleSubscribeTouch(_ sender: UIButton) {
+        // [START subscribe_topic]
+        FIRMessaging.messaging().subscribe(toTopic: "/topics/news")
+        print("Subscribed to news topic")
+        // [END subscribe_topic]
     }
 
 

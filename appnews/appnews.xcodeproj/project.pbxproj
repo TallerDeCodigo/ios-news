@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35E20C5BA01EAC18E8D5E2B2 /* Pods_appnews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6443A0C03D230077A8909B /* Pods_appnews.framework */; };
-		EC2A15491DA292CE000BE4B5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2A15481DA292CE000BE4B5 /* Alamofire.framework */; };
+		92C4D846F488B3DF513E9870 /* Pods_appnews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6443A0C03D230077A8909B /* Pods_appnews.framework */; };
+		C0B2E35D1DDB6EB4002536D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B2E35C1DDB6EB4002536D6 /* GoogleService-Info.plist */; };
+		C0D2D2CC1DDB6CFC00BA8488 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C09AE9F41DDB5C2100CF96AB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC44BD0C1DA28B74006EA3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44BD0B1DA28B74006EA3A2 /* AppDelegate.swift */; };
 		EC44BD0E1DA28B74006EA3A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44BD0D1DA28B74006EA3A2 /* ViewController.swift */; };
 		EC44BD111DA28B74006EA3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC44BD0F1DA28B74006EA3A2 /* Main.storyboard */; };
@@ -40,8 +41,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C0D2D2CD1DDB6CFC00BA8488 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C0D2D2CC1DDB6CFC00BA8488 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B2AD5575BFA3681868031DD8 /* Pods-appnews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appnews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appnews/Pods-appnews.debug.xcconfig"; sourceTree = "<group>"; };
+		C09AE9F41DDB5C2100CF96AB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/appnews-asynxwrfnpiahafocdeyixrwxgiu/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		C0B2E35C1DDB6EB4002536D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0D2D2C71DDB6CD800BA8488 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		C0D2D2C91DDB6CF100BA8488 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		DA526C2382453309ECDF9B01 /* Pods-appnews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appnews.release.xcconfig"; path = "Pods/Target Support Files/Pods-appnews/Pods-appnews.release.xcconfig"; sourceTree = "<group>"; };
 		DF6443A0C03D230077A8909B /* Pods_appnews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_appnews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2A15481DA292CE000BE4B5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/appnews-fwnnxippmhowzjdbdrrybshyabwb/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -70,8 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC2A15491DA292CE000BE4B5 /* Alamofire.framework in Frameworks */,
-				35E20C5BA01EAC18E8D5E2B2 /* Pods_appnews.framework in Frameworks */,
+				92C4D846F488B3DF513E9870 /* Pods_appnews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +122,9 @@
 		BCFF334A646D9022EF71A9D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0D2D2C91DDB6CF100BA8488 /* Alamofire.framework */,
+				C0D2D2C71DDB6CD800BA8488 /* Alamofire.framework */,
+				C09AE9F41DDB5C2100CF96AB /* Alamofire.framework */,
 				EC2A15481DA292CE000BE4B5 /* Alamofire.framework */,
 				DF6443A0C03D230077A8909B /* Pods_appnews.framework */,
 			);
@@ -144,6 +165,7 @@
 				EC44BD121DA28B74006EA3A2 /* Assets.xcassets */,
 				EC44BD141DA28B74006EA3A2 /* LaunchScreen.storyboard */,
 				EC44BD171DA28B74006EA3A2 /* Info.plist */,
+				C0B2E35C1DDB6EB4002536D6 /* GoogleService-Info.plist */,
 				EC6995DA1DA2A10500CEAE27 /* FeedTableViewCell.swift */,
 				EC6995DC1DA2A4ED00CEAE27 /* FeedTableViewController.swift */,
 			);
@@ -205,6 +227,7 @@
 				EC44BD061DA28B74006EA3A2 /* Resources */,
 				0562EF4C443E9F75A11DCA84 /* [CP] Embed Pods Frameworks */,
 				7203BE1CD87DBA403E892544 /* [CP] Copy Pods Resources */,
+				C0D2D2CD1DDB6CFC00BA8488 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,13 +286,16 @@
 				TargetAttributes = {
 					EC44BD071DA28B74006EA3A2 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 					EC44BD1B1DA28B74006EA3A2 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = EC44BD071DA28B74006EA3A2;
 					};
 					EC44BD261DA28B74006EA3A2 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = EC44BD071DA28B74006EA3A2;
 					};
 				};
@@ -300,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC44BD161DA28B74006EA3A2 /* LaunchScreen.storyboard in Resources */,
+				C0B2E35D1DDB6EB4002536D6 /* GoogleService-Info.plist in Resources */,
 				EC44BD131DA28B74006EA3A2 /* Assets.xcassets in Resources */,
 				EC44BD111DA28B74006EA3A2 /* Main.storyboard in Resources */,
 			);
@@ -523,10 +550,15 @@
 			baseConfigurationReference = B2AD5575BFA3681868031DD8 /* Pods-appnews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
+				);
 				INFOPLIST_FILE = appnews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdc.appnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -535,10 +567,15 @@
 			baseConfigurationReference = DA526C2382453309ECDF9B01 /* Pods-appnews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
+				);
 				INFOPLIST_FILE = appnews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdc.appnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -550,6 +587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdc.appnewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/appnews.app/appnews";
 			};
 			name = Debug;
@@ -562,6 +600,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdc.appnewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/appnews.app/appnews";
 			};
 			name = Release;
@@ -573,6 +612,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdc.appnewsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = appnews;
 			};
 			name = Debug;
@@ -584,6 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdc.appnewsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = appnews;
 			};
 			name = Release;
