@@ -11,7 +11,6 @@
 		C088DFD41DDE1CCE00BCFF60 /* NewsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DFD31DDE1CCE00BCFF60 /* NewsAdapter.swift */; };
 		C088DFD61DDE1D8C00BCFF60 /* InternacionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DFD51DDE1D8C00BCFF60 /* InternacionalViewController.swift */; };
 		C0B2E35D1DDB6EB4002536D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B2E35C1DDB6EB4002536D6 /* GoogleService-Info.plist */; };
-		C0D2D2CC1DDB6CFC00BA8488 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C09AE9F41DDB5C2100CF96AB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC44BD0C1DA28B74006EA3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44BD0B1DA28B74006EA3A2 /* AppDelegate.swift */; };
 		EC44BD0E1DA28B74006EA3A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44BD0D1DA28B74006EA3A2 /* ViewController.swift */; };
 		EC44BD111DA28B74006EA3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC44BD0F1DA28B74006EA3A2 /* Main.storyboard */; };
@@ -42,20 +41,6 @@
 			remoteInfo = appnews;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C0D2D2CD1DDB6CFC00BA8488 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C0D2D2CC1DDB6CFC00BA8488 /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B2AD5575BFA3681868031DD8 /* Pods-appnews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appnews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appnews/Pods-appnews.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,7 +226,6 @@
 				EC44BD061DA28B74006EA3A2 /* Resources */,
 				0562EF4C443E9F75A11DCA84 /* [CP] Embed Pods Frameworks */,
 				7203BE1CD87DBA403E892544 /* [CP] Copy Pods Resources */,
-				C0D2D2CD1DDB6CFC00BA8488 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

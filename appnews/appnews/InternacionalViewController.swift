@@ -18,6 +18,7 @@ class InternacionalViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         scrollView = UIScrollView(frame: view.bounds)
+    
         
         self.view.addSubview(scrollView)
         
@@ -29,7 +30,50 @@ class InternacionalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func adjustConstFullSize(adjustedView: UIView!, parentView: UIView!) {
+        
+        let topConstraint = NSLayoutConstraint(item: adjustedView,
+                                               attribute: .top,
+                                               relatedBy: .equal,
+                                               toItem: parentView,
+                                               attribute: .top,
+                                               multiplier: 1.0,
+                                               constant: 0.0)
+        
+        let leftConstraint = NSLayoutConstraint(item: adjustedView,
+                                                attribute: .leading,
+                                                relatedBy: .equal,
+                                                toItem: parentView,
+                                                attribute: .leading,
+                                                multiplier: 1.0,
+                                                constant: 0.0)
+        
+        let rightConstraint = NSLayoutConstraint(item: adjustedView,
+                                                 attribute: .trailing,
+                                                 relatedBy: .equal,
+                                                 toItem: parentView,
+                                                 attribute: .trailing,
+                                                 multiplier: 1.0,
+                                                 constant: 0.0)
+        
+        
+        let bottomConstraint = NSLayoutConstraint(item: adjustedView,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: parentView,
+                                                  attribute: .bottom,
+                                                  multiplier: 1.0,
+                                                  constant: 0.0)
+        
+        parentView.addConstraints([topConstraint, leftConstraint, rightConstraint, bottomConstraint])
+        
+    }
+    
+    
+    
     func getInternacionalNews() -> Void {
+        
+        var y_t = 0
         
         Alamofire.request("https://televisa.news/wp-json/news/v1/region/internacional").responseJSON{ (responseData) -> Void in
             
@@ -43,45 +87,64 @@ class InternacionalViewController: UIViewController {
                     
                     var y = 30
                     
+                    let bounds = self.view.bounds
+                    
+                    let ancho = bounds.size.width
+                    
                     //If json is .Dictionary
                     
                     for key in resData {
                         
-                        let v = CardsView(frame: CGRect(x: 7, y: y, width: 360, height: 300))
+                        let v = CardsView(frame: CGRect(x: 0, y: y, width: Int(ancho), height: 300))
+                        
                         
                         //Images
                         
-                        var imageViewObject : UIImageView
-                        imageViewObject = UIImageView(frame:CGRect(x: 0, y: 0, width: 360, height: 180));
+                        let containerView: UIView = UIView(frame:CGRect(x: 0, y: 0, width: Int(ancho), height: 180))
+                        
+                        containerView.clipsToBounds = true
+
+                        v.addSubview(containerView)
+                        
+                        let imageViewObject : UIImageView = UIImageView();
+                        
                         imageViewObject.image = UIImage(named:"bkg_thumb")
                         
-                        v.addSubview(imageViewObject)
+                        imageViewObject.contentMode = UIViewContentMode.scaleAspectFill
+                        
+                        imageViewObject.translatesAutoresizingMaskIntoConstraints = false
+                        
+                        imageViewObject.clipsToBounds = true
+
+                        containerView.addSubview(imageViewObject)
+                        
+                        self.adjustConstFullSize(adjustedView: imageViewObject, parentView: containerView)
+                        
                         
                         //Title
-                        let txtTitle = UILabel(frame: CGRect(x:10, y: 180, width: 300, height: 30));
+                        let txtTitle = UILabel(frame: CGRect(x:0, y: 180, width: Int(ancho), height: 30));
                         
-                        txtTitle.text = "Hola mundo"
+                        txtTitle.text = String(y_t)
                     
                         v.addSubview(txtTitle)
                         
-                        let txtExcerpt = UITextView(frame: CGRect(x:10, y: 210, width: 300, height: 70));
+                        let txtExcerpt = UITextView(frame: CGRect(x:0, y: 210, width: Int(ancho), height: 70));
+                        
+                        txtExcerpt.isUserInteractionEnabled = false
+                        
+                        txtExcerpt.backgroundColor = UIColor.clear
                         
                         txtExcerpt.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis"
                         
-                        
                         v.addSubview(txtExcerpt)
                         
-                        v.backgroundColor = UIColor.lightGray
-                        
-                        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-                        button.backgroundColor = UIColor.red
-                        
-                        
-                        v.addSubview(button)
+                        v.backgroundColor = UIColor.white
                         
                         self.scrollView.addSubview(v);
 
-                        y = y + 310
+                        y = y + 330
+                        
+                        y_t = y + 330
                     }
                     
                 }
@@ -90,12 +153,12 @@ class InternacionalViewController: UIViewController {
             
         }
         
-        self.scrollView.contentSize = CGSize(width: 360, height: 3150)
+        self.scrollView.contentSize = CGSize(width: 360, height: y_t)
     }
     
-    func ratingButtonTapped(button: UIButton) {
-        print("Button pressed 👍")
-    }
+    //func ratingButtonTapped(button: UIButton) {
+    //    print("Button pressed 👍")
+    //}
 
     /*
     // MARK: - Navigation
