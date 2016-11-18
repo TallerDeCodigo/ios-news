@@ -29,6 +29,7 @@ extension String {
 class FeedTableViewController: UITableViewController {
     
 //    var feedNews = [News]()
+    
     var feedNews:NSMutableArray = []
     var json : JSON = JSON.null
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		92C4D846F488B3DF513E9870 /* Pods_appnews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6443A0C03D230077A8909B /* Pods_appnews.framework */; };
+		C088DFD41DDE1CCE00BCFF60 /* NewsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DFD31DDE1CCE00BCFF60 /* NewsAdapter.swift */; };
+		C088DFD61DDE1D8C00BCFF60 /* InternacionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DFD51DDE1D8C00BCFF60 /* InternacionalViewController.swift */; };
 		C0B2E35D1DDB6EB4002536D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B2E35C1DDB6EB4002536D6 /* GoogleService-Info.plist */; };
 		C0D2D2CC1DDB6CFC00BA8488 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C09AE9F41DDB5C2100CF96AB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC44BD0C1DA28B74006EA3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44BD0B1DA28B74006EA3A2 /* AppDelegate.swift */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		B2AD5575BFA3681868031DD8 /* Pods-appnews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appnews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appnews/Pods-appnews.debug.xcconfig"; sourceTree = "<group>"; };
+		C088DFD31DDE1CCE00BCFF60 /* NewsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsAdapter.swift; sourceTree = "<group>"; };
+		C088DFD51DDE1D8C00BCFF60 /* InternacionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternacionalViewController.swift; sourceTree = "<group>"; };
 		C09AE9F41DDB5C2100CF96AB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/appnews-asynxwrfnpiahafocdeyixrwxgiu/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		C0B2E35C1DDB6EB4002536D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0D2D2C71DDB6CD800BA8488 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -131,6 +135,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C088DFD21DDE1C8D00BCFF60 /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				C088DFD31DDE1CCE00BCFF60 /* NewsAdapter.swift */,
+			);
+			name = adapter;
+			sourceTree = "<group>";
+		};
 		EC44BCFF1DA28B74006EA3A2 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +168,7 @@
 		EC44BD0A1DA28B74006EA3A2 /* appnews */ = {
 			isa = PBXGroup;
 			children = (
+				C088DFD21DDE1C8D00BCFF60 /* adapter */,
 				ECDC0F241DA3F59800FFFC26 /* views */,
 				ECDC0F211DA3EEF300FFFC26 /* helpers */,
 				EC6995DE1DA2A7C600CEAE27 /* model */,
@@ -210,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				ECDC0F251DA3F5BC00FFFC26 /* BreakingViewController.swift */,
+				C088DFD51DDE1D8C00BCFF60 /* InternacionalViewController.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -402,7 +416,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC44BD0E1DA28B74006EA3A2 /* ViewController.swift in Sources */,
+				C088DFD61DDE1D8C00BCFF60 /* InternacionalViewController.swift in Sources */,
 				EC6995DB1DA2A10500CEAE27 /* FeedTableViewCell.swift in Sources */,
+				C088DFD41DDE1CCE00BCFF60 /* NewsAdapter.swift in Sources */,
 				ECDC0F231DA3EF1200FFFC26 /* ImageLoader.swift in Sources */,
 				EC44BD0C1DA28B74006EA3A2 /* AppDelegate.swift in Sources */,
 				ECDC0F261DA3F5BC00FFFC26 /* BreakingViewController.swift in Sources */,
