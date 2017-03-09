@@ -18,9 +18,30 @@ class InternacionalViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         scrollView = UIScrollView(frame: view.bounds)
-    
         
         self.view.addSubview(scrollView)
+        
+        let bounds = self.view.bounds
+        
+        let ancho = bounds.size.width
+        
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: Int(ancho), height: 68))
+        navBar.tintColor = UIColor.cyan
+        self.view.addSubview(navBar)
+        let navItem = UINavigationItem(title: "televisa.NEWS")
+        //let doneItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: Selector(("Action1:")))
+        //let menuItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu1"), landscapeImagePhone: nil, style: UIBarButtonItemStyle.plain, target: nil, action: Selector(("Action1:")))
+        let menuItem = UIBarButtonItem(title: "Menú", style: .plain, target: self, action: Selector(("Action1:")))
+        let alertsItem = UIBarButtonItem(title: "Alertas", style: .plain, target: self, action: Selector(("Action1:")))
+        navItem.rightBarButtonItem = alertsItem
+        navItem.leftBarButtonItem = menuItem
+        navBar.setItems([navItem], animated: false)
+        
+        //let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        //let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Menu View Controller") as! MenuViewController
+        
+        //self.present(nextViewController, animated:true, completion:nil)
         
         getInternacionalNews()
     }
@@ -141,6 +162,8 @@ class InternacionalViewController: UIViewController {
                         v.backgroundColor = UIColor.white
                         
                         self.scrollView.addSubview(v);
+                        
+                        
 
                         y = y + 330
                         
