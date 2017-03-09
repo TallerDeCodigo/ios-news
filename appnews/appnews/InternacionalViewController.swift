@@ -96,13 +96,13 @@ class InternacionalViewController: UIViewController {
         
         var y_t = 0
         
-        Alamofire.request("https://televisa.news/wp-json/news/v1/region/internacional").responseJSON{ (responseData) -> Void in
+        Alamofire.request("http://noticieros.televisa.com/wp-json/news/v1/region/internacional").responseJSON{ (responseData) -> Void in
             
             if((responseData.result.value) != nil) {
                 
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 
-               // print(swiftyJsonVar)
+                print(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar.arrayObject {
                     
@@ -117,7 +117,6 @@ class InternacionalViewController: UIViewController {
                     for key in resData {
                         
                         let v = CardsView(frame: CGRect(x: 0, y: y, width: Int(ancho), height: 300))
-                        
                         
                         //Images
                         
@@ -145,7 +144,9 @@ class InternacionalViewController: UIViewController {
                         //Title
                         let txtTitle = UILabel(frame: CGRect(x:0, y: 180, width: Int(ancho), height: 30));
                         
-                        txtTitle.text = String(y_t)
+                        txtTitle.text = "Puse luto en mi cama"
+                        
+                        //txtTitle.text = String(y_t)
                     
                         v.addSubview(txtTitle)
                         
@@ -162,7 +163,6 @@ class InternacionalViewController: UIViewController {
                         v.backgroundColor = UIColor.white
                         
                         self.scrollView.addSubview(v);
-                        
                         
 
                         y = y + 330

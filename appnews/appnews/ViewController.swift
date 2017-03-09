@@ -3,7 +3,7 @@
 //  appnews
 //
 //  Created by leopardx on 10/3/16.
-//  Copyright © 2016 Taller de Código. All rights reserved.
+//  Copyright © 2016 Bild Media. All rights reserved.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        Alamofire.request("https://televisa.news/wp-json/news/v1/region/cdmx").responseJSON{ (responseData) -> Void in
+        Alamofire.request("http://noticieros.televisa.com/wp-json/news/v1/region/cdmx").responseJSON{ (responseData) -> Void in
             
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
